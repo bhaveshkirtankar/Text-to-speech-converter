@@ -1,0 +1,336 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #f6ff00;
+}
+
+.navbar.scrolled {
+  background: rgba(33, 12, 174, 0.9);
+  padding: 0.5rem 1rem !important;
+  border-radius: 0 0 10px 10px;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  padding: 40px 0;
+}
+
+/* LEFT SIDE */
+.left-side .title {
+  font-size: 70px;
+  font-weight: 520;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px rgba(0,0,0,0.3);
+}
+
+/* Animated Text for Text & Speech */
+.animated-text {
+  color: #ffeb3b; /* Solid yellow */
+  font-weight: 700;
+  display: inline-block;
+  animation: waveFloat 2s ease-in-out infinite;
+}
+
+/* Smooth wave floating effect */
+@keyframes waveFloat {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-3px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.yellow {
+  color: #ffd700;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 450px;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+
+/* RIGHT SIDE CONTAINER */
+.tts-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 480px;
+  transition: all 0.3s ease-in-out;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  resize: none;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #210CAE;
+  box-shadow: 0 0 5px rgba(33,12,174,0.3);
+}
+
+select, input[type="file"], input[type="range"] {
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+}
+
+/* RANGE INPUT LABELS */
+.tts-card label {
+  font-weight: 600;
+  color: #210CAE;
+  font-size: 0.95rem;
+}
+
+/* BUTTON */
+.btn-generate {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: opacity 0.3s;
+}
+
+.btn-generate:hover {
+  opacity: 0.9;
+}
+
+/* ABOUT US SECTION */
+.about-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px rgba(0,0,0,0.3);
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ABOUT IMAGE SPACING */
+.about-section .col-md-6 {
+  padding: 20px;
+}
+
+.about-section .col-md-6:first-child {
+  padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .about-section .col-md-6:first-child {
+    padding-right: 0;
+  }
+}
+
+/* VOICEIFY COLORS */
+#voice {
+   font-weight: 600;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 40px;
+   color: cornsilk;
+}
+
+#txt {
+   font-size: 25px;
+   color: #ffeb3b;
+}
+
+/* TUTORIAL SECTION */
+.tutorial-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0;
+}
+
+#voiceify {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.tutorial-card {
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: none;
+  padding: 30px 20px;
+  min-height: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.tutorial-card .card-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.tutorial-card .card-text {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .left-side {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .about-title {
+    font-size: 2.2rem;
+  }
+  .about-text {
+    font-size: 1rem;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.faq-section .about-title {
+  font-size: 55px;
+  font-weight: 700;
+  color: #f8f8f5;
+  text-shadow: 1px 1px rgba(0,0,0,0.3);
+}
+
+.faq-section .about-text {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.accordion-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  box-shadow: none;
+  padding: 15px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.accordion-body {
+  background: rgba(0, 0, 0, 0.15);
+  color: #f1f1f1;
+  padding: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Optional fade animation for FAQ expand */
+.accordion-collapse {
+  transition: all 0.4s ease-in-out;
+}
+
+
+.footer-section {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-section h4 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.footer-section .social-links a {
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.footer-section .social-links a:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+
+
