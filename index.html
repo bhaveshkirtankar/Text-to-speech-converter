@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TalkGPT : Text To Speech Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <!-- DARK/LIGHT TOGGLE -->
+   <!-- Dark/Light Mode Toggle -->
+<div id="theme-toggle" class="theme-toggle">
+  <i id="theme-icon" class="fas fa-moon"></i>
+</div>
+
+
+
+
+  <!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top py-3">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#tutorial">Tutorial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faq">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- HOME SECTION -->
+  <section id="home" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- LEFT SIDE -->
+        <div class="col-md-6 left-side text-center text-md-start">
+          <h1 class="title">
+            <span class="animated-text">Text</span> To <span class="animated-text">Speech</span> Converter
+          </h1>
+          <p class="subtitle">
+            "A simple and powerful Text to Speech Converter that transforms your written text into natural-sounding voice instantly. Perfect for accessibility, learning, and content creation."
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="tts-card shadow-lg">
+            <textarea id="text-input" class="form-control" rows="7" placeholder="Type your text here..." maxlength="500"></textarea>
+            <small id="char-count" class="text-muted d-block text-end mt-1">0 / 500</small>
+
+            <!-- Volume, Rate, Pitch -->
+            <div class="mt-2 d-flex justify-content-between align-items-center gap-2">
+              <div class="flex-fill text-center">
+                <label for="volume" class="form-label fw-semibold">Volume</label>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1" class="form-range">
+              </div>
+              <div class="flex-fill text-center">
+                <label for="rate" class="form-label fw-semibold">Rate</label>
+                <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" class="form-range">
+              </div>
+              <div class="flex-fill text-center">
+                <label for="pitch" class="form-label fw-semibold">Pitch</label>
+                <input type="range" id="pitch" min="0" max="2" step="0.1" value="1" class="form-range">
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <label class="form-label fw-semibold">Upload File</label>
+              <input type="file" id="file-input" class="form-control" accept=".txt,.pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <div class="mt-3">
+              <label class="form-label fw-semibold">Select Voice</label>
+              <select id="voice-select" class="form-select"></select>
+            </div>
+
+            <div class="mt-3">
+              <button id="toggle-btn" class="btn btn-generate w-100">Generate Speech</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION -->
+  <section id="about" class="about-section d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+          <img src="images/about us.png" alt="About Voiceify" class="img-fluid rounded shadow-lg">
+        </div>
+
+        <div class="col-md-6">
+          <h1 class="about-title mb-4">About Us</h1>
+          <p class="about-text lead">
+           At <span id="voice">TalkGPT</span>, we believe in giving words a voice. Our platform transforms written <span id="txt">text </span>into natural, clear, and expressive speech instantly. Designed for everyone—from students and content creators to professionals—TalkGPT makes information more accessible and communication effortless. Whether you want to listen to your documents, create voiceovers, or simply bring text to life, TalkGPT is here to make your words heard.
+          </p>
+          <p class="about-text lead mt-3">
+            Our team is passionate about bridging the gap between text and audio, ensuring a smooth user experience with multiple voices, file uploads, and responsive design.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTORIAL SECTION -->
+  <section id="tutorial" class="tutorial-section d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class="about-title mb-5">How To Use <span id="voiceify">TalkGPT</span> 4 Easy Steps</h1>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card tutorial-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Step 1</h5>
+              <p class="card-text">Type or paste your text into the box provided or upload a file (.txt).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card tutorial-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Step 2</h5>
+              <p class="card-text">Choose your preferred voice from the dropdown list of available options.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card tutorial-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Step 3</h5>
+              <p class="card-text">Click the “Generate Speech” button to hear your text spoken aloud instantly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card tutorial-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Step 4</h5>
+              <p class="card-text">To stop playback, click the button again. Adjust and enjoy seamless speech conversion!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- FAQ SECTION -->
+<section id="faq" class="faq-section d-flex align-items-center justify-content-center text-center">
+  <div class="container">
+    <h1 class="about-title mb-3">Frequently Asked Questions</h1>
+    <p class="about-text mb-5">Quick answers to common questions about <span id="voiceify">TalkGPT</span>.</p>
+
+    <div class="accordion" id="faqAccordion">
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            1. What is a Text-to-Speech Converter?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            A Text-to-Speech (TTS) converter transforms written text into natural-sounding speech.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mt-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            2. Is this TTS tool free to use?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! The basic version is free. Premium voices or features may be added later.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mt-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            3. Can I change the speaking speed or pitch?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can adjust speed and pitch sliders to change voice output according to your preference.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mt-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            4. Who can benefit from using this tool?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Students, content creators, teachers, visually impaired users, and developers.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mt-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            5. Is this tool mobile-friendly?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, it’s fully responsive on desktops, tablets, and smartphones.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item mt-2">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+            6. What makes this TTS different from others?
+          </button>
+        </h2>
+        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Focus on simplicity, accuracy, and natural voice output. Lightweight, fast, and no login required.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section text-center text-white py-5">
+  <div class="container">
+    <h4 class="mb-3">TalkGPT</h4>
+    <p class="mb-2">Transforming your text into natural, expressive speech instantly.</p>
+    
+    <div class="social-links mb-3">
+      <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/bhavesh_kirtankar07?igsh=MW83em9hMG1ieWd5NA==" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/bhavesh-kirtankar1978/" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <p class="mb-0">&copy; 2025 TalkGPT. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
